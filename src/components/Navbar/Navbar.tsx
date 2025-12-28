@@ -30,7 +30,6 @@ const defaultNavItems: NavItem[] = [
     label: 'Projetos',
     onClick: () => scrollToSection('projetos')
   },
-  { label: 'Tecnologias' },
   { 
     label: 'Sobre mim',
     onClick: () => scrollToSection('sobre-mim')
