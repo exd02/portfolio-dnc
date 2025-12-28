@@ -1,4 +1,4 @@
-# Eliam Portfolio
+# Eliam Portfolio (Template 02)
 
 Um portfólio pessoal moderno construído com React, TypeScript e Vite. O projeto demonstra boas práticas de desenvolvimento front-end com componentes reutilizáveis, responsividade adaptativa e gerenciamento de tema.
 
