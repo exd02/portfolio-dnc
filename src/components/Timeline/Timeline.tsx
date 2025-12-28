@@ -9,7 +9,7 @@ interface TimelineEvent {
 const timelineEvents: TimelineEvent[] = [
   {
     year: '2017',
-    description: 'Início do Ensino Técnico Integrado ao Ensino Médio no Instituto Federal Campus Rio Pomba',
+    description: 'Início do Ensino Técnico em Informática Integrado ao Ensino Médio no Instituto Federal Campus Rio Pomba',
   },
   {
     year: '2019',
