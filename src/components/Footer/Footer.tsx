@@ -1,7 +1,6 @@
 import { Container, Box, Typography } from '@mui/material'
 import { useTheme } from '@/context'
 import { SocialLinks } from '@/components/SocialLinks'
-import styles from './Footer.module.css'
 
 function Footer() {
   const { colors } = useTheme()

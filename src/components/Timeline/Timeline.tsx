@@ -1,6 +1,5 @@
-import { Container, Box, Typography, useMediaQuery, useTheme as useMuiTheme } from '@mui/material'
+import { Container, Box, Typography } from '@mui/material'
 import { useTheme } from '@/context'
-import styles from './Timeline.module.css'
 
 interface TimelineEvent {
   year: string
@@ -24,8 +23,6 @@ const timelineEvents: TimelineEvent[] = [
 
 function Timeline() {
   const { colors } = useTheme()
-  const muiTheme = useMuiTheme()
-  const isMobile = useMediaQuery(muiTheme.breakpoints.down('md'))
 
   return (
     <Box
