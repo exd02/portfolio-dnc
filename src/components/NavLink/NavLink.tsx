@@ -1,4 +1,5 @@
-import { ReactNode } from 'react'
+import { type ReactNode } from 'react'
+import { useTheme } from '@/context'
 import styles from './NavLink.module.css'
 
 interface NavLinkProps {
@@ -9,18 +10,19 @@ interface NavLinkProps {
 }
 
 function NavLink({ href, children, onClick, className }: NavLinkProps) {
+  const { colors } = useTheme()
   const combinedClassName = `${styles.navLink} ${className || ''}`.trim()
 
   if (href) {
     return (
-      <a href={href} className={combinedClassName} onClick={onClick}>
+      <a href={href} className={combinedClassName} onClick={onClick} style={{ color: colors.text }}>
         {children}
       </a>
     )
   }
 
   return (
-    <button type="button" className={combinedClassName} onClick={onClick}>
+    <button type="button" className={combinedClassName} onClick={onClick} style={{ color: colors.text }}>
       {children}
     </button>
   )
