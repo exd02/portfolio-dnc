@@ -1,7 +1,9 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
 import { ThemeProvider } from '@/context'
 import { darkThemeColors } from '@/styles/themeColors'
+import { muiTheme } from '@/styles/muiTheme'
 import App from '@/App'
 
 // Inject global styles with ID for theme updates
@@ -9,6 +11,9 @@ import App from '@/App'
 const styleSheet = document.createElement('style')
 styleSheet.id = 'global-styles'
 styleSheet.textContent = `
+* {
+  font-family: "Poppins", sans-serif !important;
+}
 body, html {
   background-color: ${darkThemeColors.background};
   color: ${darkThemeColors.text};
@@ -26,8 +31,10 @@ document.head.appendChild(styleSheet)
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
+    <MuiThemeProvider theme={muiTheme}>
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
+    </MuiThemeProvider>
   </StrictMode>,
 )

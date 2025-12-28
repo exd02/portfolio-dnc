@@ -59,6 +59,9 @@ function updateGlobalStyles(colors: ThemeColors): void {
   const styleSheet = document.getElementById('global-styles')
   if (styleSheet) {
     styleSheet.textContent = `
+* {
+  font-family: "Poppins", sans-serif !important;
+}
 body, html {
   background-color: ${colors.background};
   color: ${colors.text};

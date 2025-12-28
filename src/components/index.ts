@@ -4,5 +4,7 @@ export { IconButton } from './IconButton'
 export { ThemeSwitch } from './ThemeSwitch'
 export { Hero } from './Hero'
 export { GradientButton } from './GradientButton'
+export { Projects } from './Projects'
+export { Project } from './Project'
 export { GitHubIcon, LinkedInIcon } from './icons'
 

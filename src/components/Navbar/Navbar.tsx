@@ -26,8 +26,18 @@ interface NavbarProps {
   socialLinks?: SocialLink[]
 }
 
+const scrollToSection = (sectionId: string) => {
+  const element = document.getElementById(sectionId)
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+}
+
 const defaultNavItems: NavItem[] = [
-  { label: 'Projetos' },
+  { 
+    label: 'Projetos',
+    onClick: () => scrollToSection('projetos')
+  },
   { label: 'Tecnologias' },
   { label: 'Sobre mim' },
 ]

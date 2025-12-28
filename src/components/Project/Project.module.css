@@ -1,0 +1,28 @@
+.project {
+  padding: 25px;
+  /* Border radius only on top-left and bottom-right */
+  border-top-left-radius: 50px;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  height: 740px;
+  max-width: 450px;
+  width: 100%;
+}
+
+.projectImage {
+  object-fit: cover;
+}
+
+.projectTitle {
+  text-align: center;
+}
+
+.projectButton {
+  width: 200px !important;
+  height: 60px !important;
+  font-size: 1rem !important;
+}
+
