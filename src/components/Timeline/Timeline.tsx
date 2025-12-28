@@ -14,7 +14,7 @@ const timelineEvents: TimelineEvent[] = [
   },
   {
     year: '2019',
-    description: 'Ingresso no curso de Ciência da Computação',
+    description: 'Conclusão do Ensino Técnico Integrado ao Ensino Médio e Ingresso no curso de Ciência da Computação no Instituto Federal Campus Rio Pomba',
   },
   {
     year: '2025',
@@ -113,7 +113,7 @@ function Timeline() {
                   <Box
                     sx={{
                       position: { xs: 'absolute', md: 'relative' },
-                      left: { xs: '-2.3rem', md: 'auto' },
+                      left: { xs: '-0.3rem', md: 'auto' },
                       top: { xs: 0, md: 'auto' },
                       width: '32px',
                       height: '32px',

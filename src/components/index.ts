@@ -8,5 +8,6 @@ export { Projects } from './Projects'
 export { Project } from './Project'
 export { Timeline } from './Timeline'
 export { SocialLinks } from './SocialLinks'
+export { Footer } from './Footer'
 export { GitHubIcon, LinkedInIcon } from './icons'
 
