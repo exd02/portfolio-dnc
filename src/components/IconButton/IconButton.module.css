@@ -1,0 +1,27 @@
+.iconButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: white;
+  transition: opacity 0.2s ease;
+  text-decoration: none;
+}
+
+.iconButton:hover {
+  opacity: 0.8;
+}
+
+.iconButton:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.iconButton svg {
+  display: block;
+}
+
