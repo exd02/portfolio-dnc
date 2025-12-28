@@ -3,10 +3,9 @@ import { Container, Box, IconButton as MuiIconButton, Drawer, List, ListItem, Ty
 import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
 import { NavLink } from '@/components/NavLink'
-import { IconButton } from '@/components/IconButton'
 import { ThemeSwitch } from '@/components/ThemeSwitch'
+import { SocialLinks } from '@/components/SocialLinks'
 import { useTheme } from '@/context'
-import { GitHubIcon, LinkedInIcon } from '@/components/icons'
 import styles from './Navbar.module.css'
 
 interface NavItem {
@@ -15,15 +14,8 @@ interface NavItem {
   onClick?: () => void
 }
 
-interface SocialLink {
-  icon: React.ReactNode
-  href: string
-  ariaLabel: string
-}
-
 interface NavbarProps {
   navItems?: NavItem[]
-  socialLinks?: SocialLink[]
 }
 
 const scrollToSection = (sectionId: string) => {
@@ -39,29 +31,17 @@ const defaultNavItems: NavItem[] = [
     onClick: () => scrollToSection('projetos')
   },
   { label: 'Tecnologias' },
-  { label: 'Sobre mim' },
+  { 
+    label: 'Sobre mim',
+    onClick: () => scrollToSection('sobre-mim')
+  },
 ]
 
-function Navbar({ navItems = defaultNavItems, socialLinks }: NavbarProps) {
+function Navbar({ navItems = defaultNavItems }: NavbarProps) {
   const { colors } = useTheme()
   const muiTheme = useMuiTheme()
   const isMobile = useMediaQuery(muiTheme.breakpoints.down('md'))
   const [mobileOpen, setMobileOpen] = useState(false)
-
-  const defaultSocialLinksWithTheme: SocialLink[] = [
-    {
-      icon: <GitHubIcon size={32} color={colors.icon} />,
-      href: 'https://github.com/exd02',
-      ariaLabel: 'GitHub',
-    },
-    {
-      icon: <LinkedInIcon size={32} color={colors.icon} />,
-      href: 'https://www.linkedin.com/in/eliam-david-071448232/',
-      ariaLabel: 'LinkedIn',
-    },
-  ]
-
-  const displaySocialLinks = socialLinks || defaultSocialLinksWithTheme
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen)
@@ -118,15 +98,7 @@ function Navbar({ navItems = defaultNavItems, socialLinks }: NavbarProps) {
           paddingTop: 2,
         }}
       >
-        {displaySocialLinks.map((link) => (
-          <IconButton
-            key={link.ariaLabel}
-            href={link.href}
-            ariaLabel={link.ariaLabel}
-          >
-            {link.icon}
-          </IconButton>
-        ))}
+        <SocialLinks gap={2} />
       </Box>
     </Box>
   )
@@ -216,15 +188,7 @@ function Navbar({ navItems = defaultNavItems, socialLinks }: NavbarProps) {
                 }}
               >
                 <div className={styles.socialLinks} style={{ gap: 'clamp(1rem, 1.5rem, 1.5rem)' }}>
-                  {displaySocialLinks.map((link) => (
-                    <IconButton
-                      key={link.ariaLabel}
-                      href={link.href}
-                      ariaLabel={link.ariaLabel}
-                    >
-                      {link.icon}
-                    </IconButton>
-                  ))}
+                  <SocialLinks gap="clamp(1rem, 1.5rem, 1.5rem)" />
                 </div>
                 <Box sx={{ marginLeft: { xs: 3, md: 6 } }}>
                   <ThemeSwitch />

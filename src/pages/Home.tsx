@@ -1,5 +1,5 @@
 import { Box } from '@mui/material'
-import { Navbar, Hero, Projects } from '@/components'
+import { Navbar, Hero, Projects, Timeline } from '@/components'
 
 function Home() {
   return (
@@ -7,6 +7,7 @@ function Home() {
       <Navbar />
       <Hero />
       <Projects />
+      <Timeline />
     </Box>
   )
 }

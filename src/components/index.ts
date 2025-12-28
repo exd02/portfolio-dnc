@@ -6,5 +6,7 @@ export { Hero } from './Hero'
 export { GradientButton } from './GradientButton'
 export { Projects } from './Projects'
 export { Project } from './Project'
+export { Timeline } from './Timeline'
+export { SocialLinks } from './SocialLinks'
 export { GitHubIcon, LinkedInIcon } from './icons'
 
