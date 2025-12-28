@@ -71,7 +71,7 @@ function Navbar({ navItems = defaultNavItems, socialLinks }: NavbarProps) {
       }}
     >
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
-        <Typography variant="h6" sx={{ color: colors.text, fontWeight: 600, fontFamily: '"Poppins", sans-serif' }}>
+        <Typography variant="h6" sx={{ color: colors.text, fontWeight: 600 }}>
           Menu 
         </Typography>
         <MuiIconButton 
@@ -126,7 +126,9 @@ function Navbar({ navItems = defaultNavItems, socialLinks }: NavbarProps) {
       component="nav"
       sx={{
         width: '100%',
-        height: '137px',
+        height: { xs: 'auto', md: '137px' },
+        minHeight: { xs: '80px', md: '137px' },
+        padding: { xs: '1rem 0', md: 0 },
         position: 'relative',
         backgroundColor: colors.navbar,
         transition: 'background-color 0.3s ease',
@@ -157,7 +159,6 @@ function Navbar({ navItems = defaultNavItems, socialLinks }: NavbarProps) {
                   fontWeight: 600,
                   flex: 1,
                   textAlign: 'center',
-                  fontFamily: '"Poppins", sans-serif',
                 }}
               >
                 Eliam Portfolio

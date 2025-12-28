@@ -1,10 +1,12 @@
-import { Navbar } from '@/components'
+import { Box } from '@mui/material'
+import { Navbar, Hero } from '@/components'
 
 function Home() {
   return (
-    <div>
+    <Box>
       <Navbar />
-    </div>
+      <Hero />
+    </Box>
   )
 }
 
