@@ -1,73 +1,57 @@
-# React + TypeScript + Vite
+# Eliam Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um portfólio pessoal moderno construído com React, TypeScript e Vite. O projeto demonstra boas práticas de desenvolvimento front-end com componentes reutilizáveis, responsividade adaptativa e gerenciamento de tema.
 
-Currently, two official plugins are available:
+## Estrutura básica do Projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+src/
+├── components/          # Componentes reutilizáveis
+│   ├── Navbar/         # Barra de navegação com menu mobile
+│   ├── Hero/           # Seção principal com apresentação
+│   ├── Timeline/       # Timeline de educação
+│   ├── Projects/       # Grid de projetos
+│   ├── Footer/         # Rodapé com contato
+│   ├── SocialLinks/    # Links de redes sociais (reutilizado no header e footer)
+│   ├── GradientButton/ # Botão com gradiente
+│   ├── ThemeSwitch/    # Toggle tema claro/escuro
+│   └── icons/          # Ícones customizados
+├── context/            # Context API para estado global
+├── pages/              # Páginas da aplicação
+│   └── Home.tsx        # Página principal
+├── styles/             # Estilos globais
+├── App.tsx
+└── main.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Funcionalidades Principais
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Responsividade com Material-UI
+Todos os componentes utilizam o sistema de breakpoints do Material-UI para garantir adaptação perfeita em diferentes tamanhos de tela:
+- **Mobile-first approach** com `xs`, `md`, `lg` breakpoints
+- Flexbox responsivo para layouts dinâmicos
+- Tipografia escalonada de acordo com o viewport
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Estado com useState
+- **Menu Mobile** (Navbar): `useState` controla abertura/fechamento do drawer
+- **Tema** (ThemeContext): `useState` mantém o estado light/dark, localStorage persistindo a escolha
+
+## Instalação e Execução
+
+```bash
+# Instalar dependências
+npm install
+
+# Executar em desenvolvimento
+npm run dev
+
+# Build para produção
+npm run build
+
+## Notes
+
+- Todos os componentes são funcionais
+- Tipagem TypeScript rigorosa em todo o projeto
+- CSS Modules para evitar conflitos de estilos
+- Acessibilidade considerada em elementos interativos
+- Material-UI Box e Container para layout responsivo
